@@ -1,0 +1,28 @@
+Last login: Sat Sep 20 10:47:47 on ttys006
+(base) naveenkumar@NAVEENKUAMARs-MacBook-Air untitled folder % 
+(base) naveenkumar@NAVEENKUAMARs-MacBook-Air untitled folder % -- table_creation.sql
+-- This script creates the transactions table for the Financial Transaction Manager.
+-- It is designed according to PostgreSQL best practices for data integrity and performance.
+
+CREATE TABLE IF NOT EXISTS transactions (
+    id SERIAL PRIMARY KEY,
+    transaction_date DATE NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    category VARCHAR(100) NOT NULL,
+    amount NUMERIC(10, 2) NOT NULL,
+    transaction_type VARCHAR(10) NOT NULL CHECK (transaction_type IN ('Income', 'Expense'))
+);
+
+-- Optional: Add an index on transaction_date and category for faster querying,
+-- which is beneficial for data warehousing and BI analysis.
+CREATE INDEX IF NOT EXISTS idx_transaction_date ON transactions(transaction_date);
+CREATE INDEX IF NOT EXISTS idx_category ON transactions(category);
+zsh: command not found: --
+zsh: command not found: --
+zsh: command not found: --
+zsh: no matches found: (\n    id SERIAL PRIMARY KEY,\n    transaction_date DATE NOT NULL,\n    description VARCHAR(255) NOT NULL,\n    category VARCHAR(100) NOT NULL,\n    amount NUMERIC(10, 2) NOT NULL,\n    transaction_type VARCHAR(10) NOT NULL CHECK (transaction_type IN (Income, Expense))\n)
+zsh: command not found: --
+zsh: command not found: --
+zsh: number expected
+zsh: number expected
+(base) naveenkumar@NAVEENKUAMARs-MacBook-Air untitled folder % 
